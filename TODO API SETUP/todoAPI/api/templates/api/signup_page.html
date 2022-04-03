@@ -1,0 +1,17 @@
+{% extends "api/main_page.html"%}
+
+{% block content %}
+<div class="header-bar">
+    <h1>SignUp<h1>
+</div>
+
+<div class="card-body">
+    <h4><form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="button" type="submit" value="SignUp"/>
+    </form><h4>
+    <h4>Already have an account? Go to SignIn Page now! <a href="{% url 'signin' %}" style="cursor: pointer; text-decoration: none; font-size: 20px">SignIn</a></h4>
+</div>
+
+{% endblock %}

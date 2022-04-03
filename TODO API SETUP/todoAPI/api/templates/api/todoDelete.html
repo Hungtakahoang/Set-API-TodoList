@@ -1,0 +1,16 @@
+{% extends 'api/main_page.html' %}
+
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'TodoList' %}"style="font-weight:900;">&#8592; BACK</a>
+</div>
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        <p>Are your sure you want to delete this work? "{{delete_todo}}"</p>
+        <input class="button" type="submit" value="Delete"/>
+    </form>
+</div>
+{% endblock %}

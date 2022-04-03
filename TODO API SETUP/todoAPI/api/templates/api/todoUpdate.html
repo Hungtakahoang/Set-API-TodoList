@@ -1,0 +1,13 @@
+{% extends 'api/main_page.html' %} {% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'TodoList' %}"style="font-weight:900;">&#8592; BACK</a>
+</div>
+<div class="card-body">
+    <form method="POST" action="">
+        {% csrf_token %} <!--Protect code-->
+        {{form.as_p}}
+        <input class="button" type="submit" value="Submit"/>
+    </form>
+</div>
+{% endblock %}
